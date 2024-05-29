@@ -1,2 +1,13 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h1>投稿一覧</h1>
+
+<!--eachメソッドによりListレコードの数だけ繰り返し処理を行う-->
+<!--各レコードの内容はlistという変数に格納-->
+<% @lists.each do |list| %>
+
+  <p>タイトル</p>
+  <!--list.[カラム名]と記述することでレコードのカラムの内容を表示-->
+  <span>
+    <%= link_to list.title, list_path(list.id) %>
+  </span>
+
+<% end %>
